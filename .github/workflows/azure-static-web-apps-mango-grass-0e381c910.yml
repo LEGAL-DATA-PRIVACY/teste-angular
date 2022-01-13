@@ -20,7 +20,6 @@ jobs:
           submodules: true
       - name: Build And Deploy
         id: builddeploy
-        run: npm install && npm run build -- --prod
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_GRASS_0E381C910 }}
@@ -28,10 +27,9 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/src" # App source code path
+          app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "dist/Teste" # Built app content directory - optional
-          app_build_command: "echo 'empty'"
 
           ###### End of Repository/Build Configurations ######
 
